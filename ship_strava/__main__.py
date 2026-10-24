@@ -39,7 +39,9 @@ def main(argv=None):
     commits = _load(a.repos)
     if a.cmd == "board":
         for i, r in enumerate(leaderboard(commits, date.today() - timedelta(weeks=a.weeks)), 1):
-            print(f"{i:>2}. {r['author']:<24} {r['ships']:>4} ships  {r['active_days']:>3} days  {r['commits']:>5} commits")
+            print(
+                f"{i:>2}. {r['author']:<24} {r['ships']:>4} ships  {r['active_days']:>3} days  {r['commits']:>5} commits"
+            )
         return 0
     weeks = weekly(commits, a.author)
     st = streaks(weeks, date.today())
@@ -47,7 +49,9 @@ def main(argv=None):
         print(f"current streak {st['current']} weeks, longest {st['longest']}, {st['weeks_shipped']} weeks with ships")
         rec = records(weeks)
         if rec:
-            print(f"PRs: most ships {rec['most_ships'][1]} ({rec['most_ships'][0]}), most active days {rec['most_active_days'][1]} ({rec['most_active_days'][0]})")
+            print(
+                f"PRs: most ships {rec['most_ships'][1]} ({rec['most_ships'][0]}), most active days {rec['most_active_days'][1]} ({rec['most_active_days'][0]})"
+            )
         return 0
     if not weeks:
         print("no commits found")

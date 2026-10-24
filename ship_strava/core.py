@@ -1,4 +1,5 @@
 """Turn git history into weekly shipping stats, streaks, records and leaderboards."""
+
 from __future__ import annotations
 
 import json
@@ -9,7 +10,18 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
 
-__all__ = ["Commit", "parse_log", "read_repo", "weekly", "streaks", "records", "leaderboard", "summary", "Kudos", "GIT_FORMAT"]
+__all__ = [
+    "Commit",
+    "parse_log",
+    "read_repo",
+    "weekly",
+    "streaks",
+    "records",
+    "leaderboard",
+    "summary",
+    "Kudos",
+    "GIT_FORMAT",
+]
 
 SEP = "\x1e"
 GIT_FORMAT = f"--format={SEP}%H%x09%an%x09%ae%x09%aI%x09%P%x09%D%x09%s"
@@ -32,12 +44,21 @@ class Commit:
 
     @property
     def is_ship(self) -> bool:
-        return bool(SHIP_RE.match(self.subject)) or bool(self.tags) or (self.is_merge and "pull request" in self.subject.lower())
+        return (
+            bool(SHIP_RE.match(self.subject))
+            or bool(self.tags)
+            or (self.is_merge and "pull request" in self.subject.lower())
+        )
 
     @property
     def week(self) -> str:
         y, w, _ = self.when.isocalendar()
         return f"{y}-W{w:02d}"
+
+
+def _parse_iso(value: str) -> datetime:
+    """git emits a trailing "Z" for UTC; datetime.fromisoformat only accepts it from Python 3.11."""
+    return datetime.fromisoformat(value[:-1] + "+00:00" if value.endswith("Z") else value)
 
 
 def parse_log(text: str, repo: str = "") -> list[Commit]:
@@ -52,7 +73,7 @@ def parse_log(text: str, repo: str = "") -> list[Commit]:
             continue
         sha, author, email, iso, parents, refs, subject = parts[:7]
         tags = [r.strip()[5:] for r in refs.split(",") if r.strip().startswith("tag: ")]
-        c = Commit(sha, author, email, datetime.fromisoformat(iso), subject, repo, is_merge=len(parents.split()) > 1, tags=tags)
+        c = Commit(sha, author, email, _parse_iso(iso), subject, repo, is_merge=len(parents.split()) > 1, tags=tags)
         for line in lines[1:]:
             m = re.match(r"^(\d+|-)\t(\d+|-)\t", line)
             if m:
@@ -78,7 +99,9 @@ def _match(c: Commit, author: str | None) -> bool:
 
 
 def weekly(commits: list[Commit], author: str | None = None) -> dict[str, dict]:
-    weeks: dict[str, dict] = defaultdict(lambda: {"commits": 0, "ships": 0, "added": 0, "removed": 0, "files": 0, "days": set(), "repos": set()})
+    weeks: dict[str, dict] = defaultdict(
+        lambda: {"commits": 0, "ships": 0, "added": 0, "removed": 0, "files": 0, "days": set(), "repos": set()}
+    )
     for c in commits:
         if not _match(c, author):
             continue
@@ -90,7 +113,10 @@ def weekly(commits: list[Commit], author: str | None = None) -> dict[str, dict]:
         w["files"] += c.files
         w["days"].add(c.when.date())
         w["repos"].add(c.repo)
-    return {k: {**v, "active_days": len(v["days"]), "days": sorted(v["days"]), "repos": sorted(v["repos"])} for k, v in sorted(weeks.items())}
+    return {
+        k: {**v, "active_days": len(v["days"]), "days": sorted(v["days"]), "repos": sorted(v["repos"])}
+        for k, v in sorted(weeks.items())
+    }
 
 
 def _week_start(key: str) -> date:
@@ -122,7 +148,10 @@ def records(weeks: dict[str, dict]) -> dict:
         return {}
     best_ships = max(weeks.items(), key=lambda kv: kv[1]["ships"])
     best_days = max(weeks.items(), key=lambda kv: kv[1]["active_days"])
-    return {"most_ships": (best_ships[0], best_ships[1]["ships"]), "most_active_days": (best_days[0], best_days[1]["active_days"])}
+    return {
+        "most_ships": (best_ships[0], best_ships[1]["ships"]),
+        "most_active_days": (best_days[0], best_days[1]["active_days"]),
+    }
 
 
 def leaderboard(commits: list[Commit], since: date) -> list[dict]:
@@ -134,21 +163,29 @@ def leaderboard(commits: list[Commit], since: date) -> list[dict]:
         r["ships"] += c.is_ship
         r["commits"] += 1
         r["days"].add(c.when.date())
-    board = [{"author": a, "ships": r["ships"], "active_days": len(r["days"]), "commits": r["commits"]} for a, r in rows.items()]
+    board = [
+        {"author": a, "ships": r["ships"], "active_days": len(r["days"]), "commits": r["commits"]}
+        for a, r in rows.items()
+    ]
     return sorted(board, key=lambda r: (-r["ships"], -r["active_days"], r["author"]))
 
 
 def summary(week_key: str, w: dict, streak: dict) -> str:
     repos = ", ".join(w["repos"]) or "-"
-    return (f"Week {week_key}: {w['ships']} ships across {len(w['repos'])} repo(s) ({repos}), "
-            f"{w['commits']} commits on {w['active_days']} days, +{w['added']}/-{w['removed']} lines. "
-            f"Streak: {streak['current']} week(s) (best {streak['longest']}).")
+    return (
+        f"Week {week_key}: {w['ships']} ships across {len(w['repos'])} repo(s) ({repos}), "
+        f"{w['commits']} commits on {w['active_days']} days, +{w['added']}/-{w['removed']} lines. "
+        f"Streak: {streak['current']} week(s) (best {streak['longest']})."
+    )
 
 
 class Kudos:
     def __init__(self, path: str):
         self.path = path
-        self.data = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+        self.data = {}
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as fh:
+                self.data = json.load(fh)
 
     def give(self, frm: str, to: str, week: str):
         given = self.data.setdefault(f"{to}|{week}", [])

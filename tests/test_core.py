@@ -8,11 +8,13 @@ from datetime import date
 from ship_strava import Kudos, leaderboard, parse_log, read_repo, records, streaks, summary, weekly
 from ship_strava.core import SEP
 
-LOG = (f"{SEP}a1\tSam\tsam@x.io\t2026-10-05T10:00:00+00:00\tp0\ttag: v1.0\tchore: release\n\n3\t1\tREADME.md\n"
-       f"{SEP}a2\tSam\tsam@x.io\t2026-10-06T10:00:00+00:00\tp1\t\tfeat(api): add search\n\n120\t10\tapi.py\n5\t0\ttest_api.py\n"
-       f"{SEP}a3\tSam\tsam@x.io\t2026-10-14T10:00:00+00:00\tp2\t\tfix: null crash\n\n2\t2\tapi.py\n"
-       f"{SEP}a4\tLee\tlee@x.io\t2026-10-20T10:00:00+00:00\tp3 p4\t\tMerge pull request #7 from lee/branch\n"
-       f"{SEP}a5\tSam\tsam@x.io\t2026-10-21T10:00:00+00:00\tp5\t\tdocs: typo\n\n1\t1\tREADME.md\n")
+LOG = (
+    f"{SEP}a1\tSam\tsam@x.io\t2026-10-05T10:00:00+00:00\tp0\ttag: v1.0\tchore: release\n\n3\t1\tREADME.md\n"
+    f"{SEP}a2\tSam\tsam@x.io\t2026-10-06T10:00:00+00:00\tp1\t\tfeat(api): add search\n\n120\t10\tapi.py\n5\t0\ttest_api.py\n"
+    f"{SEP}a3\tSam\tsam@x.io\t2026-10-14T10:00:00+00:00\tp2\t\tfix: null crash\n\n2\t2\tapi.py\n"
+    f"{SEP}a4\tLee\tlee@x.io\t2026-10-20T10:00:00+00:00\tp3 p4\t\tMerge pull request #7 from lee/branch\n"
+    f"{SEP}a5\tSam\tsam@x.io\t2026-10-21T10:00:00+00:00\tp5\t\tdocs: typo\n\n1\t1\tREADME.md\n"
+)
 
 
 class Tests(unittest.TestCase):
@@ -43,6 +45,12 @@ class Tests(unittest.TestCase):
         self.assertEqual([r["author"] for r in board], ["Sam", "Lee"])
         self.assertEqual(board[0]["ships"], board[1]["ships"])
 
+    def test_utc_z_suffix_parses_on_all_versions(self):
+        # git log %aI prints "Z" for UTC; Python 3.10 fromisoformat rejects it
+        log = f"{SEP}z1\tA\ta@x\t2026-10-24T14:43:50Z\tp\t\tfeat: x\n"
+        (c,) = parse_log(log)
+        self.assertEqual(c.when.utcoffset().total_seconds(), 0)
+
     def test_kudos(self):
         with tempfile.TemporaryDirectory() as d:
             k = Kudos(os.path.join(d, "k.json"))
@@ -54,7 +62,13 @@ class Tests(unittest.TestCase):
     @unittest.skipUnless(shutil.which("git"), "git not installed")
     def test_real_git_repo(self):
         with tempfile.TemporaryDirectory() as d:
-            env = {**os.environ, "GIT_AUTHOR_NAME": "T", "GIT_AUTHOR_EMAIL": "t@x", "GIT_COMMITTER_NAME": "T", "GIT_COMMITTER_EMAIL": "t@x"}
+            env = {
+                **os.environ,
+                "GIT_AUTHOR_NAME": "T",
+                "GIT_AUTHOR_EMAIL": "t@x",
+                "GIT_COMMITTER_NAME": "T",
+                "GIT_COMMITTER_EMAIL": "t@x",
+            }
             subprocess.run(["git", "init", "-q", d], check=True)
             with open(os.path.join(d, "a.txt"), "w") as fh:
                 fh.write("x\n")

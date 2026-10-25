@@ -186,6 +186,8 @@ class Kudos:
         if os.path.exists(path):
             with open(path, encoding="utf-8-sig") as fh:
                 self.data = json.load(fh)
+            if not isinstance(self.data, dict):
+                raise ValueError(f"{path}: expected a JSON object of kudos")
 
     def give(self, frm: str, to: str, week: str):
         given = self.data.setdefault(f"{to}|{week}", [])

@@ -44,8 +44,9 @@ class Commit:
 
     @property
     def is_ship(self) -> bool:
+        # a "feat:" commit that touches no files (git commit --allow-empty) is not a ship
         return (
-            bool(SHIP_RE.match(self.subject))
+            (bool(SHIP_RE.match(self.subject)) and self.files > 0)
             or bool(self.tags)
             or (self.is_merge and "pull request" in self.subject.lower())
         )
@@ -63,6 +64,7 @@ def _parse_iso(value: str) -> datetime:
 
 def parse_log(text: str, repo: str = "") -> list[Commit]:
     commits = []
+    seen = set()
     for block in text.split(SEP):
         block = block.strip("\n")
         if not block:
@@ -72,6 +74,9 @@ def parse_log(text: str, repo: str = "") -> list[Commit]:
         if len(parts) < 7:
             continue
         sha, author, email, iso, parents, refs, subject = parts[:7]
+        if sha in seen:
+            continue
+        seen.add(sha)
         tags = [r.strip()[5:] for r in refs.split(",") if r.strip().startswith("tag: ")]
         c = Commit(sha, author, email, _parse_iso(iso), subject, repo, is_merge=len(parents.split()) > 1, tags=tags)
         for line in lines[1:]:
@@ -155,17 +160,21 @@ def records(weeks: dict[str, dict]) -> dict:
 
 
 def leaderboard(commits: list[Commit], since: date) -> list[dict]:
-    rows: dict[str, dict] = defaultdict(lambda: {"ships": 0, "commits": 0, "days": set()})
+    """One row per person (keyed by email, so "Sam" and "sam" merge) and one count per commit sha."""
+    rows: dict[str, dict] = defaultdict(lambda: {"ships": 0, "commits": 0, "days": set(), "name": ""})
+    seen = set()
     for c in commits:
-        if c.when.date() < since:
+        if c.when.date() < since or c.sha in seen:
             continue
-        r = rows[c.author]
+        seen.add(c.sha)
+        r = rows[(c.email or c.author).strip().lower()]
+        r["name"] = r["name"] or c.author
         r["ships"] += c.is_ship
         r["commits"] += 1
         r["days"].add(c.when.date())
     board = [
-        {"author": a, "ships": r["ships"], "active_days": len(r["days"]), "commits": r["commits"]}
-        for a, r in rows.items()
+        {"author": r["name"], "ships": r["ships"], "active_days": len(r["days"]), "commits": r["commits"]}
+        for r in rows.values()
     ]
     return sorted(board, key=lambda r: (-r["ships"], -r["active_days"], r["author"]))
 
@@ -189,12 +198,19 @@ class Kudos:
             if not isinstance(self.data, dict):
                 raise ValueError(f"{path}: expected a JSON object of kudos")
 
+    @staticmethod
+    def _who(name: str) -> str:
+        return " ".join(str(name).split()).casefold()
+
     def give(self, frm: str, to: str, week: str):
+        frm, to = self._who(frm), self._who(to)
         given = self.data.setdefault(f"{to}|{week}", [])
-        if frm != to and frm not in given:
+        if frm != to and frm not in given:  # no self-kudos, however it is capitalised
             given.append(frm)
-        with open(self.path, "w", encoding="utf-8") as fh:
+        tmp = f"{self.path}.tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
             json.dump(self.data, fh, indent=2)
+        os.replace(tmp, self.path)
 
     def count(self, to: str, week: str) -> int:
-        return len(self.data.get(f"{to}|{week}", []))
+        return len(self.data.get(f"{self._who(to)}|{week}", []))

@@ -79,6 +79,31 @@ class Tests(unittest.TestCase):
             self.assertTrue(commits[0].is_ship)
             self.assertEqual(commits[0].added, 1)
 
+    def test_empty_feat_commits_are_not_ships(self):
+        log = "".join(
+            f"{SEP}e{i}\tSam\tsam@x.io\t2026-10-06T10:0{i}:00+00:00\tp\t\tfeat: totally real feature {i}\n"
+            for i in range(5)
+        )
+        self.assertEqual(sum(c.is_ship for c in parse_log(log)), 0)
+
+    def test_same_commit_and_same_person_are_counted_once(self):
+        twice = parse_log(LOG, "repo") + parse_log(LOG, "fork")
+        board = {r["author"]: r for r in leaderboard(twice, date(2026, 10, 1))}
+        self.assertEqual(board["Sam"]["commits"], 4)
+        renamed = LOG.replace("a5\tSam\t", "a5\tsam\t")
+        board = leaderboard(parse_log(renamed), date(2026, 10, 1))
+        self.assertEqual(len(board), 2, board)
+        dup = parse_log(LOG + LOG)
+        self.assertEqual(len(dup), 5)
+
+    def test_self_kudos_ignores_case_and_write_is_atomic(self):
+        with tempfile.TemporaryDirectory() as d:
+            k = Kudos(os.path.join(d, "k.json"))
+            k.give("Sam", "sam", "2026-W41")
+            k.give(" SAM ", "Sam", "2026-W41")
+            self.assertEqual(k.count("sam", "2026-W41"), 0)
+            self.assertEqual(os.listdir(d), ["k.json"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -45,7 +45,7 @@ Every plan starts with a 14-day free trial. Prices in USD, billed monthly unless
 | **Team** | $8 per member per month | Leaderboards; Kudos; Team summary |
 | **Community** | $199 per month | Hackathons and cohorts; Public leaderboards; Branding |
 
-To start a trial or buy a plan, email **sales@YOUR-DOMAIN.com**.
+To start a trial or buy a plan, [request access](https://github.com/eliem08/shipstreak/issues/new?title=ShipStreak%20trial&labels=sales).
 
 ## Licence
 

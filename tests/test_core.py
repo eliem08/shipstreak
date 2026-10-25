@@ -5,8 +5,8 @@ import tempfile
 import unittest
 from datetime import date
 
-from ship_strava import Kudos, leaderboard, parse_log, read_repo, records, streaks, summary, weekly
-from ship_strava.core import SEP
+from shipstreak import Kudos, leaderboard, parse_log, read_repo, records, streaks, summary, weekly
+from shipstreak.core import SEP
 
 LOG = (
     f"{SEP}a1\tSam\tsam@x.io\t2026-10-05T10:00:00+00:00\tp0\ttag: v1.0\tchore: release\n\n3\t1\tREADME.md\n"

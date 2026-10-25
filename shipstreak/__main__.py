@@ -18,7 +18,7 @@ def _load(repos):
 
 
 def _run(argv=None):
-    ap = argparse.ArgumentParser(prog="ship-strava")
+    ap = argparse.ArgumentParser(prog="shipstreak")
     sub = ap.add_subparsers(dest="cmd", required=True)
     for name in ("week", "streak"):
         p = sub.add_parser(name)

@@ -1,4 +1,4 @@
-# Architecture — ship-strava
+# Architecture — shipstreak
 
 ## 1. Scope
 A training log for builders: weekly shipping stats, streaks, records, leaderboards, kudos from git history.

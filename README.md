@@ -1,15 +1,43 @@
-# ship-strava
+<!-- sell-kit:start -->
+# ShipStreak
 
-[![CI](https://github.com/eliem08/ship-strava/actions/workflows/ci.yml/badge.svg)](https://github.com/eliem08/ship-strava/actions/workflows/ci.yml)
+[![CI](https://github.com/eliem08/shipstreak/actions/workflows/ci.yml/badge.svg)](https://github.com/eliem08/shipstreak/actions/workflows/ci.yml)
 
-> **Strava for builders** — track what you ship every week.
+> **Track what you ship every week and keep the streak alive.**
 
-Runners have Strava: every run logged, weekly mileage, streaks, kudos.
-Builders have nothing but a GitHub contribution grid. `ship-strava` turns
-your git history across all your repos into a weekly training log: ships,
-streaks, personal records and a leaderboard for your crew.
+**Who it's for:** Indie hackers, build-in-public founders and engineering teams.
 
-## What the MVP does
+**The problem:** Shipping consistently is what separates builders who succeed, and nothing tracks it the way a fitness app tracks runs.
+
+**What you get:** Turn git history into weekly ships, streaks, records and team leaderboards, with empty-commit gaming filtered out.
+
+## Quickstart
+
+Customers receive a release archive with the wheel and the examples. Python 3.10+ and no other dependencies.
+
+```bash
+pip install shipstreak-0.1.0-py3-none-any.whl
+shipstreak kudos lee sam --week 2026-W43 --store kudos.json
+```
+
+## Pricing
+
+Every plan starts with a 14-day free trial. Prices in USD, billed monthly unless noted.
+
+| Plan | Price | Includes |
+|---|---|---|
+| **Builder** | $5 per month | Unlimited repos; Streaks and records; Weekly summary |
+| **Team** | $8 per member per month | Leaderboards; Kudos; Team summary |
+| **Community** | $199 per month | Hackathons and cohorts; Public leaderboards; Branding |
+
+To start a trial or buy a plan, email **sales@YOUR-DOMAIN.com**.
+
+## Licence
+
+Proprietary. Copyright (c) 2026 eliem08. All rights reserved. Use requires a paid plan or an active trial; see [LICENSE](LICENSE).
+<!-- sell-kit:end -->
+
+## What it does
 
 - Reads `git log` across any number of local repos (no GitHub API needed)
 - Per author, per ISO week: commits, lines added/removed, files touched, active
@@ -26,9 +54,9 @@ streaks, personal records and a leaderboard for your crew.
 
 ```bash
 pip install -e .
-ship-strava week ~/code/umbra ~/code/agent-okta --author eliem08
-ship-strava streak ~/code/* --author eliem08
-ship-strava board ~/code/* --weeks 4
+shipstreak week ~/code/umbra ~/code/agentwarden --author eliem08
+shipstreak streak ~/code/* --author eliem08
+shipstreak board ~/code/* --weeks 4
 ```
 
 ## Roadmap
@@ -49,8 +77,8 @@ ruff check . && ruff format --check .               # lint + format
 ```
 
 ```
-ship_strava/core.py       domain logic (pure, importable, fully tested)
-ship_strava/__main__.py   CLI (`ship-strava ...` / `python -m ship_strava ...`)
+shipstreak/core.py       domain logic (pure, importable, fully tested)
+shipstreak/__main__.py   CLI (`shipstreak ...` / `python -m shipstreak ...`)
 tests/                unit tests + generated CLI smoke tests
 ```
 

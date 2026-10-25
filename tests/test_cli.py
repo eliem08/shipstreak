@@ -11,7 +11,7 @@ import pathlib
 import tempfile
 import unittest
 
-from ship_strava.__main__ import main
+from shipstreak.__main__ import main
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 COMMANDS = [

@@ -184,7 +184,7 @@ class Kudos:
         self.path = path
         self.data = {}
         if os.path.exists(path):
-            with open(path, encoding="utf-8") as fh:
+            with open(path, encoding="utf-8-sig") as fh:
                 self.data = json.load(fh)
 
     def give(self, frm: str, to: str, week: str):

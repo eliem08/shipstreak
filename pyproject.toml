@@ -23,6 +23,7 @@ dev = ["ruff>=0.6"]
 
 [project.scripts]
 shipstreak = "shipstreak.__main__:main"
+shipstreak-web = "shipstreak.web:main"
 
 [project.urls]
 Repository = "https://github.com/eliem08/shipstreak"

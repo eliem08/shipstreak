@@ -17,7 +17,7 @@ def _load(repos):
     return commits
 
 
-def _run(argv=None):
+def build_parser():
     ap = argparse.ArgumentParser(prog="shipstreak")
     sub = ap.add_subparsers(dest="cmd", required=True)
     for name in ("week", "streak"):
@@ -32,6 +32,11 @@ def _run(argv=None):
     k.add_argument("to")
     k.add_argument("--week", default=f"{date.today().isocalendar()[0]}-W{date.today().isocalendar()[1]:02d}")
     k.add_argument("--store", default="kudos.json")
+    return ap
+
+
+def _run(argv=None):
+    ap = build_parser()
     a = ap.parse_args(argv)
     if a.cmd == "kudos":
         kd = Kudos(a.store)

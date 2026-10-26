@@ -17,7 +17,9 @@ Customers receive a release archive with the wheel and the examples. Python 3.10
 
 ```bash
 pip install shipstreak-0.1.0-py3-none-any.whl
-shipstreak kudos lee sam --week 2026-W43 --store kudos.json
+shipstreak week examples/acme-app.log
+shipstreak streak examples/acme-app.log
+shipstreak board examples/acme-app.log --weeks 52
 ```
 
 ## Web app and API
@@ -34,6 +36,22 @@ Every API call needs `Authorization: Bearer <key>` once any key exists; a server
 
 Endpoints: `POST /api/week`, `POST /api/streak`, `POST /api/board`, `POST /api/kudos`, plus `GET /healthz` and `GET /api/spec` (machine-readable field list).
 Files are sent as `{"name": ..., "content": ...}`, folders as `{"files": [...]}` or a base64 zip.
+
+## Deploy and sell
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/eliem08/shipstreak)
+
+`render.yaml` (one click, above) and `fly.toml` (`fly launch --copy-config`) both run the Dockerfile with a persistent `/data` volume and a `/healthz` check.
+To sell self-serve, set four variables and point a Stripe webhook at `https://<your-host>/billing/webhook` (events `checkout.session.completed` and `customer.subscription.deleted`):
+
+| Variable | Example |
+|---|---|
+| `STRIPE_SECRET_KEY` | `sk_live_...` |
+| `STRIPE_WEBHOOK_SECRET` | `whsec_...` |
+| `STRIPE_PRICES` | `team=price_123,business=price_456` |
+| `PUBLIC_URL` | `https://shipstreak.example.com` |
+
+Buyers pick a plan on `/pricing`, pay on Stripe Checkout and see their API key once on the success page. Cancelling the subscription revokes the key. A selling server always requires a key.
 
 ## Pricing
 

@@ -4,7 +4,7 @@ import os
 import sys
 from datetime import date, timedelta
 
-from .core import Kudos, leaderboard, read_repo, records, streaks, summary, weekly
+from .core import Kudos, export_log, leaderboard, read_repo, records, streaks, summary, weekly
 
 
 def _load(repos):
@@ -20,13 +20,18 @@ def _load(repos):
 def build_parser():
     ap = argparse.ArgumentParser(prog="shipstreak")
     sub = ap.add_subparsers(dest="cmd", required=True)
+    src = "git repo folders, or files from `shipstreak export`"
     for name in ("week", "streak"):
         p = sub.add_parser(name)
-        p.add_argument("repos", nargs="+")
+        p.add_argument("repos", nargs="+", help=src)
         p.add_argument("--author")
     b = sub.add_parser("board")
-    b.add_argument("repos", nargs="+")
+    b.add_argument("repos", nargs="+", help=src)
     b.add_argument("--weeks", type=int, default=4)
+    ex = sub.add_parser("export", help="write a repo's history to stdout, ready to upload to the web app")
+    ex.add_argument("repo")
+    ex.add_argument("--since", help="e.g. 2026-01-01 or '12 weeks ago'")
+    ex.set_defaults(web=False)  # reads the local disk: CLI only, never exposed by the hosted API
     k = sub.add_parser("kudos")
     k.add_argument("frm")
     k.add_argument("to")
@@ -42,6 +47,9 @@ def _run(argv=None):
         kd = Kudos(a.store)
         kd.give(a.frm, a.to, a.week)
         print(f"{a.to} has {kd.count(a.to, a.week)} kudos for {a.week}")
+        return 0
+    if a.cmd == "export":
+        sys.stdout.write(export_log(a.repo, a.since))
         return 0
     commits = _load(a.repos)
     if a.cmd == "board":

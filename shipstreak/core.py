@@ -89,14 +89,31 @@ def parse_log(text: str, repo: str = "") -> list[Commit]:
     return commits
 
 
-def read_repo(path: str, since: str | None = None) -> list[Commit]:
+EXPORT_HEADER = "# shipstreak-export repo="
+
+
+def export_log(path: str, since: str | None = None) -> str:
+    """A repo's history as one portable text file: upload it to the hosted app instead of the .git folder."""
     cmd = ["git", "-C", path, "log", "--all", "--numstat", GIT_FORMAT]
     if since:
         cmd.append(f"--since={since}")
     out = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
     if out.returncode != 0:
         raise RuntimeError(f"{path}: {out.stderr.strip()}")
-    return parse_log(out.stdout, os.path.basename(os.path.abspath(path)))
+    return f"{EXPORT_HEADER}{os.path.basename(os.path.abspath(path))}\n{out.stdout}"
+
+
+def read_repo(path: str, since: str | None = None) -> list[Commit]:
+    """Commits from a git repo folder, or from a file written by `shipstreak export`."""
+    if os.path.isfile(path):
+        with open(path, encoding="utf-8-sig", errors="replace") as fh:
+            text = fh.read()
+        first = text.split("\n", 1)[0]
+        if not first.startswith(EXPORT_HEADER) and SEP not in text:
+            raise ValueError(f"{path}: not a shipstreak export (run `shipstreak export REPO > file`)")
+        name = first[len(EXPORT_HEADER) :].strip() if first.startswith(EXPORT_HEADER) else ""
+        return parse_log(text, name or os.path.splitext(os.path.basename(path))[0])
+    return parse_log(export_log(path, since), os.path.basename(os.path.abspath(path)))
 
 
 def _match(c: Commit, author: str | None) -> bool:

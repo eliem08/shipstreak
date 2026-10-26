@@ -1,0 +1,613 @@
+# shipstreak-export repo=acme-app
+356a192b7913b04c54574d18c28d46e6395428ab	Maya Chen	maya@acme.dev	2026-08-14T15:00:00Z	b6589fc6ab0dc82cf12099d1c2d40ab994e8410c		refactor: split invoice module
+
+10	34	src/module_4.py
+da4b9237bacccdf19c0760cab7aec4a8359010b0	Tom Okafor	tom@acme.dev	2026-08-14T17:00:00Z	356a192b7913b04c54574d18c28d46e6395428ab		test: cover refunds
+
+5	5	src/module_14.py
+54	4	src/module_8.py
+77de68daecd823babbb58edb1c8e14d7106e83bb	Maya Chen	maya@acme.dev	2026-08-17T17:00:00Z	da4b9237bacccdf19c0760cab7aec4a8359010b0		feat: team invites
+
+29	40	src/module_21.py
+1b6453892473a467d07372d45eb05abc2031647a	Maya Chen	maya@acme.dev	2026-08-17T17:00:00Z	77de68daecd823babbb58edb1c8e14d7106e83bb		feat: team invites
+
+7	14	src/module_2.py
+72	8	src/module_10.py
+54	9	src/module_18.py
+16	36	src/module_10.py
+ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4	Tom Okafor	tom@acme.dev	2026-08-17T16:00:00Z	1b6453892473a467d07372d45eb05abc2031647a		feat: team invites
+
+48	6	src/module_18.py
+92	4	src/module_19.py
+c1dfd96eea8cc2b62785275bca38ac261256e278	Maya Chen	maya@acme.dev	2026-08-18T10:00:00Z	ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4		test: cover refunds
+
+100	20	src/module_15.py
+75	29	src/module_12.py
+39	15	src/module_26.py
+24	15	src/module_3.py
+902ba3cda1883801594b6e1b452790cc53948fda	Tom Okafor	tom@acme.dev	2026-08-18T09:00:00Z	c1dfd96eea8cc2b62785275bca38ac261256e278		fix(ui): dark mode contrast
+
+94	28	src/module_10.py
+78	4	src/module_4.py
+66	26	src/module_6.py
+fe5dbbcea5ce7e2988b8c69bcfdfde8904aabc1f	Ines Duarte	ines@acme.dev	2026-08-18T15:00:00Z	902ba3cda1883801594b6e1b452790cc53948fda		fix(ui): dark mode contrast
+
+6	4	src/module_25.py
+72	36	src/module_26.py
+113	20	src/module_11.py
+89	22	src/module_20.py
+0ade7c2cf97f75d009975f4d720d1fa6c19f4897	Maya Chen	maya@acme.dev	2026-08-19T10:00:00Z	fe5dbbcea5ce7e2988b8c69bcfdfde8904aabc1f		fix: retry webhook on 502
+
+35	30	src/module_23.py
+b1d5781111d84f7b3fe45a0852e59758cd7a87e5	Maya Chen	maya@acme.dev	2026-08-19T16:00:00Z	0ade7c2cf97f75d009975f4d720d1fa6c19f4897		feat: usage-based billing page
+
+83	36	src/module_22.py
+106	28	src/module_10.py
+92	24	src/module_29.py
+17ba0791499db908433b80f37c5fbc89b870084b	Tom Okafor	tom@acme.dev	2026-08-19T17:00:00Z	b1d5781111d84f7b3fe45a0852e59758cd7a87e5		fix(ui): dark mode contrast
+
+22	39	src/module_4.py
+64	3	src/module_7.py
+99	18	src/module_5.py
+7b52009b64fd0a2a49e6d8a939753077792b0554	Ines Duarte	ines@acme.dev	2026-08-19T11:00:00Z	17ba0791499db908433b80f37c5fbc89b870084b		refactor: split invoice module
+
+11	10	src/module_15.py
+52	35	src/module_9.py
+114	8	src/module_27.py
+56	35	src/module_9.py
+bd307a3ec329e10a2cff8fb87480823da114f8f4	Maya Chen	maya@acme.dev	2026-08-20T12:00:00Z	7b52009b64fd0a2a49e6d8a939753077792b0554		refactor: split invoice module
+
+20	5	src/module_6.py
+20	14	src/module_22.py
+fa35e192121eabf3dabf9f5ea6abdbcbc107ac3b	Maya Chen	maya@acme.dev	2026-08-20T14:00:00Z	bd307a3ec329e10a2cff8fb87480823da114f8f4		feat: usage-based billing page
+
+107	37	src/module_6.py
+34	18	src/module_1.py
+19	26	src/module_18.py
+48	39	src/module_19.py
+f1abd670358e036c31296e66b3b66c382ac00812	Tom Okafor	tom@acme.dev	2026-08-20T15:00:00Z	fa35e192121eabf3dabf9f5ea6abdbcbc107ac3b		test: cover refunds
+
+59	35	src/module_13.py
+1574bddb75c78a6fd2251d61e2993b5146201319	Ines Duarte	ines@acme.dev	2026-08-20T11:00:00Z	f1abd670358e036c31296e66b3b66c382ac00812		refactor: split invoice module
+
+62	40	src/module_13.py
+0716d9708d321ffb6a00818614779e779925365c	Ines Duarte	ines@acme.dev	2026-08-20T17:00:00Z	1574bddb75c78a6fd2251d61e2993b5146201319		feat(api): bulk export
+
+27	28	src/module_6.py
+9e6a55b6b4563e652a23be9d623ca5055c356940	Tom Okafor	tom@acme.dev	2026-08-21T17:00:00Z	0716d9708d321ffb6a00818614779e779925365c		fix: retry webhook on 502
+
+73	9	src/module_18.py
+b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f	Maya Chen	maya@acme.dev	2026-08-24T17:00:00Z	9e6a55b6b4563e652a23be9d623ca5055c356940		fix: retry webhook on 502
+
+79	24	src/module_5.py
+82	16	src/module_12.py
+91032ad7bbcb6cf72875e8e8207dcfba80173f7c	Tom Okafor	tom@acme.dev	2026-08-24T10:00:00Z	b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f		fix: retry webhook on 502
+
+109	31	src/module_15.py
+472b07b9fcf2c2451e8781e944bf5f77cd8457c8	Ines Duarte	ines@acme.dev	2026-08-24T10:00:00Z	91032ad7bbcb6cf72875e8e8207dcfba80173f7c		docs: onboarding guide
+
+19	6	src/module_24.py
+12c6fc06c99a462375eeb3f43dfd832b08ca9e17	Ines Duarte	ines@acme.dev	2026-08-24T12:00:00Z	472b07b9fcf2c2451e8781e944bf5f77cd8457c8		docs: onboarding guide
+
+107	10	src/module_17.py
+3	13	src/module_17.py
+47	9	src/module_23.py
+70	1	src/module_25.py
+d435a6cdd786300dff204ee7c2ef942d3e9034e2	Maya Chen	maya@acme.dev	2026-08-25T16:00:00Z	12c6fc06c99a462375eeb3f43dfd832b08ca9e17		docs: onboarding guide
+
+117	10	src/module_12.py
+99	14	src/module_18.py
+70	32	src/module_11.py
+4d134bc072212ace2df385dae143139da74ec0ef	Tom Okafor	tom@acme.dev	2026-08-25T14:00:00Z	d435a6cdd786300dff204ee7c2ef942d3e9034e2		feat(api): bulk export
+
+95	14	src/module_7.py
+67	31	src/module_12.py
+94	1	src/module_1.py
+102	17	src/module_16.py
+f6e1126cedebf23e1463aee73f9df08783640400	Ines Duarte	ines@acme.dev	2026-08-25T14:00:00Z	4d134bc072212ace2df385dae143139da74ec0ef	tag: v1.1.0	feat: team invites
+
+58	22	src/module_12.py
+11	14	src/module_4.py
+30	30	src/module_7.py
+887309d048beef83ad3eabf2a79a64a389ab1c9f	Maya Chen	maya@acme.dev	2026-08-26T14:00:00Z	f6e1126cedebf23e1463aee73f9df08783640400		fix(ui): dark mode contrast
+
+62	22	src/module_26.py
+bc33ea4e26e5e1af1408321416956113a4658763	Maya Chen	maya@acme.dev	2026-08-27T14:00:00Z	887309d048beef83ad3eabf2a79a64a389ab1c9f		fix(ui): dark mode contrast
+
+56	40	src/module_11.py
+12	25	src/module_15.py
+0a57cb53ba59c46fc4b692527a38a87c78d84028	Maya Chen	maya@acme.dev	2026-08-27T11:00:00Z	bc33ea4e26e5e1af1408321416956113a4658763		fix: retry webhook on 502
+
+22	8	src/module_1.py
+20	37	src/module_29.py
+7719a1c782a1ba91c031a682a0a2f8658209adbf	Tom Okafor	tom@acme.dev	2026-08-27T15:00:00Z	0a57cb53ba59c46fc4b692527a38a87c78d84028		feat: team invites
+
+85	22	src/module_5.py
+71	35	src/module_5.py
+3	0	src/module_26.py
+93	6	src/module_17.py
+22d200f8670dbdb3e253a90eee5098477c95c23d	Tom Okafor	tom@acme.dev	2026-08-27T15:00:00Z	7719a1c782a1ba91c031a682a0a2f8658209adbf		refactor: split invoice module
+
+106	13	src/module_1.py
+33	13	src/module_10.py
+632667547e7cd3e0466547863e1207a8c0c0c549	Ines Duarte	ines@acme.dev	2026-08-27T12:00:00Z	22d200f8670dbdb3e253a90eee5098477c95c23d		docs: onboarding guide
+
+107	8	src/module_2.py
+117	22	src/module_29.py
+59	37	src/module_27.py
+116	33	src/module_14.py
+cb4e5208b4cd87268b208e49452ed6e89a68e0b8	Maya Chen	maya@acme.dev	2026-08-28T09:00:00Z	632667547e7cd3e0466547863e1207a8c0c0c549		chore: bump deps
+
+112	28	src/module_25.py
+b6692ea5df920cad691c20319a6fffd7a4a766b8	Tom Okafor	tom@acme.dev	2026-08-28T17:00:00Z	cb4e5208b4cd87268b208e49452ed6e89a68e0b8		chore: bump deps
+
+19	30	src/module_20.py
+93	7	src/module_18.py
+f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59	Maya Chen	maya@acme.dev	2026-08-31T09:00:00Z	b6692ea5df920cad691c20319a6fffd7a4a766b8		test: cover refunds
+
+101	6	src/module_29.py
+72	3	src/module_8.py
+25	17	src/module_2.py
+99	6	src/module_17.py
+972a67c48192728a34979d9a35164c1295401b71	Tom Okafor	tom@acme.dev	2026-08-31T09:00:00Z	f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59		feat: usage-based billing page
+
+57	20	src/module_20.py
+fc074d501302eb2b93e2554793fcaf50b3bf7291	Tom Okafor	tom@acme.dev	2026-08-31T09:00:00Z	972a67c48192728a34979d9a35164c1295401b71		feat: team invites
+
+89	17	src/module_15.py
+66	34	src/module_26.py
+cb7a1d775e800fd1ee4049f7dca9e041eb9ba083	Ines Duarte	ines@acme.dev	2026-08-31T09:00:00Z	fc074d501302eb2b93e2554793fcaf50b3bf7291		feat(api): bulk export
+
+119	35	src/module_29.py
+26	28	src/module_5.py
+54	7	src/module_13.py
+5b384ce32d8cdef02bc3a139d4cac0a22bb029e8	Ines Duarte	ines@acme.dev	2026-08-31T10:00:00Z	cb7a1d775e800fd1ee4049f7dca9e041eb9ba083		perf: cache plan lookups
+
+86	15	src/module_14.py
+ca3512f4dfa95a03169c5a670a4c91a19b3077b4	Tom Okafor	tom@acme.dev	2026-09-01T13:00:00Z	5b384ce32d8cdef02bc3a139d4cac0a22bb029e8		fix: retry webhook on 502
+
+92	23	src/module_5.py
+33	8	src/module_15.py
+af3e133428b9e25c55bc59fe534248e6a0c0f17b	Ines Duarte	ines@acme.dev	2026-09-01T16:00:00Z	ca3512f4dfa95a03169c5a670a4c91a19b3077b4		refactor: split invoice module
+
+21	14	src/module_6.py
+91	27	src/module_17.py
+52	21	src/module_14.py
+26	22	src/module_11.py
+761f22b2c1593d0bb87e0b606f990ba4974706de	Tom Okafor	tom@acme.dev	2026-09-02T17:00:00Z	af3e133428b9e25c55bc59fe534248e6a0c0f17b		perf: cache plan lookups
+
+57	1	src/module_13.py
+43	33	src/module_20.py
+38	32	src/module_3.py
+15	14	src/module_29.py
+92cfceb39d57d914ed8b14d0e37643de0797ae56	Tom Okafor	tom@acme.dev	2026-09-03T13:00:00Z	761f22b2c1593d0bb87e0b606f990ba4974706de		feat: usage-based billing page
+
+35	8	src/module_27.py
+55	16	src/module_13.py
+0286dd552c9bea9a69ecb3759e7b94777635514b	Ines Duarte	ines@acme.dev	2026-09-03T09:00:00Z	92cfceb39d57d914ed8b14d0e37643de0797ae56		test: cover refunds
+
+90	20	src/module_3.py
+36	3	src/module_26.py
+89	11	src/module_14.py
+115	4	src/module_9.py
+98fbc42faedc02492397cb5962ea3a3ffc0a9243	Ines Duarte	ines@acme.dev	2026-09-04T16:00:00Z	0286dd552c9bea9a69ecb3759e7b94777635514b		feat: team invites
+
+9	16	src/module_28.py
+16	29	src/module_1.py
+fb644351560d8296fe6da332236b1f8d61b2828a	Maya Chen	maya@acme.dev	2026-09-07T09:00:00Z	98fbc42faedc02492397cb5962ea3a3ffc0a9243		refactor: split invoice module
+
+80	8	src/module_2.py
+68	15	src/module_4.py
+21	16	src/module_2.py
+fe2ef495a1152561572949784c16bf23abb28057	Tom Okafor	tom@acme.dev	2026-09-07T14:00:00Z	fb644351560d8296fe6da332236b1f8d61b2828a		docs: onboarding guide
+
+68	13	src/module_10.py
+58	32	src/module_22.py
+23	17	src/module_12.py
+827bfc458708f0b442009c9c9836f7e4b65557fb	Maya Chen	maya@acme.dev	2026-09-08T17:00:00Z	fe2ef495a1152561572949784c16bf23abb28057		feat: usage-based billing page
+
+94	32	src/module_18.py
+64e095fe763fc62418378753f9402623bea9e227	Tom Okafor	tom@acme.dev	2026-09-08T09:00:00Z	827bfc458708f0b442009c9c9836f7e4b65557fb		fix(ui): dark mode contrast
+
+120	28	src/module_4.py
+85	27	src/module_22.py
+2e01e17467891f7c933dbaa00e1459d23db3fe4f	Ines Duarte	ines@acme.dev	2026-09-08T09:00:00Z	64e095fe763fc62418378753f9402623bea9e227		refactor: split invoice module
+
+89	13	src/module_8.py
+44	12	src/module_27.py
+113	40	src/module_5.py
+e1822db470e60d090affd0956d743cb0e7cdf113	Ines Duarte	ines@acme.dev	2026-09-08T11:00:00Z	2e01e17467891f7c933dbaa00e1459d23db3fe4f	tag: v1.2.0	perf: cache plan lookups
+
+108	8	src/module_1.py
+b7eb6c689c037217079766fdb77c3bac3e51cb4c	Tom Okafor	tom@acme.dev	2026-09-09T11:00:00Z	e1822db470e60d090affd0956d743cb0e7cdf113		chore: bump deps
+
+11	24	src/module_28.py
+a9334987ece78b6fe8bf130ef00b74847c1d3da6	Ines Duarte	ines@acme.dev	2026-09-09T14:00:00Z	b7eb6c689c037217079766fdb77c3bac3e51cb4c		docs: onboarding guide
+
+59	11	src/module_6.py
+c5b76da3e608d34edb07244cd9b875ee86906328	Maya Chen	maya@acme.dev	2026-09-10T10:00:00Z	a9334987ece78b6fe8bf130ef00b74847c1d3da6		feat: usage-based billing page
+
+47	21	src/module_18.py
+42	15	src/module_2.py
+113	19	src/module_7.py
+80e28a51cbc26fa4bd34938c5e593b36146f5e0c	Tom Okafor	tom@acme.dev	2026-09-10T15:00:00Z	c5b76da3e608d34edb07244cd9b875ee86906328		feat: usage-based billing page
+
+49	5	src/module_16.py
+36	32	src/module_21.py
+26	15	src/module_17.py
+8effee409c625e1a2d8f5033631840e6ce1dcb64	Tom Okafor	tom@acme.dev	2026-09-11T16:00:00Z	80e28a51cbc26fa4bd34938c5e593b36146f5e0c		chore: bump deps
+
+76	2	src/module_13.py
+3	19	src/module_10.py
+81	14	src/module_3.py
+75	33	src/module_28.py
+54ceb91256e8190e474aa752a6e0650a2df5ba37	Ines Duarte	ines@acme.dev	2026-09-11T11:00:00Z	8effee409c625e1a2d8f5033631840e6ce1dcb64		perf: cache plan lookups
+
+20	18	src/module_24.py
+80	9	src/module_2.py
+106	32	src/module_21.py
+55	32	src/module_5.py
+9109c85a45b703f87f1413a405549a2cea9ab556	Tom Okafor	tom@acme.dev	2026-09-14T16:00:00Z	54ceb91256e8190e474aa752a6e0650a2df5ba37		feat: usage-based billing page
+
+18	40	src/module_12.py
+667be543b02294b7624119adc3a725473df39885	Maya Chen	maya@acme.dev	2026-09-15T10:00:00Z	9109c85a45b703f87f1413a405549a2cea9ab556		test: cover refunds
+
+81	1	src/module_21.py
+5a5b0f9b7d3f8fc84c3cef8fd8efaaa6c70d75ab	Maya Chen	maya@acme.dev	2026-09-15T09:00:00Z	667be543b02294b7624119adc3a725473df39885		feat(api): bulk export
+
+34	0	src/module_15.py
+103	4	src/module_24.py
+120	32	src/module_29.py
+69	5	src/module_22.py
+e6c3dd630428fd54834172b8fd2735fed9416da4	Ines Duarte	ines@acme.dev	2026-09-15T13:00:00Z	5a5b0f9b7d3f8fc84c3cef8fd8efaaa6c70d75ab		fix: retry webhook on 502
+
+31	13	src/module_8.py
+95	29	src/module_16.py
+109	24	src/module_3.py
+6c1e671f9af5b46d9c1a52067bdf0e53685674f7	Ines Duarte	ines@acme.dev	2026-09-15T10:00:00Z	e6c3dd630428fd54834172b8fd2735fed9416da4		docs: onboarding guide
+
+79	40	src/module_21.py
+511a418e72591eb7e33f703f04c3fa16df6c90bd	Maya Chen	maya@acme.dev	2026-09-16T16:00:00Z	6c1e671f9af5b46d9c1a52067bdf0e53685674f7		feat: team invites
+
+43	16	src/module_21.py
+96	19	src/module_20.py
+a17554a0d2b15a664c0e73900184544f19e70227	Tom Okafor	tom@acme.dev	2026-09-16T17:00:00Z	511a418e72591eb7e33f703f04c3fa16df6c90bd		fix(ui): dark mode contrast
+
+63	17	src/module_22.py
+c66c65175fecc3103b3b587be9b5b230889c8628	Maya Chen	maya@acme.dev	2026-09-17T10:00:00Z	a17554a0d2b15a664c0e73900184544f19e70227		docs: onboarding guide
+
+60	29	src/module_15.py
+99	7	src/module_29.py
+71	12	src/module_10.py
+2a459380709e2fe4ac2dae5733c73225ff6cfee1	Ines Duarte	ines@acme.dev	2026-09-17T17:00:00Z	c66c65175fecc3103b3b587be9b5b230889c8628		docs: onboarding guide
+
+10	32	src/module_15.py
+35	24	src/module_7.py
+118	13	src/module_3.py
+75	5	src/module_5.py
+59129aacfb6cebbe2c52f30ef3424209f7252e82	Ines Duarte	ines@acme.dev	2026-09-17T09:00:00Z	2a459380709e2fe4ac2dae5733c73225ff6cfee1		docs: onboarding guide
+
+17	38	src/module_27.py
+81	32	src/module_9.py
+114	7	src/module_23.py
+4d89d294cd4ca9f2ca57dc24a53ffb3ef5303122	Maya Chen	maya@acme.dev	2026-09-18T14:00:00Z	59129aacfb6cebbe2c52f30ef3424209f7252e82		fix(ui): dark mode contrast
+
+51	1	src/module_6.py
+1	31	src/module_22.py
+58	25	src/module_10.py
+94	9	src/module_14.py
+b4c96d80854dd27e76d8cc9e21960eebda52e962	Tom Okafor	tom@acme.dev	2026-09-18T11:00:00Z	4d89d294cd4ca9f2ca57dc24a53ffb3ef5303122		perf: cache plan lookups
+
+108	21	src/module_1.py
+a72b20062ec2c47ab2ceb97ac1bee818f8b6c6cb	Ines Duarte	ines@acme.dev	2026-09-18T12:00:00Z	b4c96d80854dd27e76d8cc9e21960eebda52e962		refactor: split invoice module
+
+119	12	src/module_23.py
+b7103ca278a75cad8f7d065acda0c2e80da0b7dc	Tom Okafor	tom@acme.dev	2026-09-21T13:00:00Z	a72b20062ec2c47ab2ceb97ac1bee818f8b6c6cb		perf: cache plan lookups
+
+51	24	src/module_28.py
+d02560dd9d7db4467627745bd6701e809ffca6e3	Maya Chen	maya@acme.dev	2026-09-22T11:00:00Z	b7103ca278a75cad8f7d065acda0c2e80da0b7dc		docs: onboarding guide
+
+36	6	src/module_2.py
+c097638f92de80ba8d6c696b26e6e601a5f61eb7	Tom Okafor	tom@acme.dev	2026-09-22T15:00:00Z	d02560dd9d7db4467627745bd6701e809ffca6e3		feat(api): bulk export
+
+56	32	src/module_11.py
+25	23	src/module_26.py
+55	1	src/module_26.py
+35e995c107a71caeb833bb3b79f9f54781b33fa1	Ines Duarte	ines@acme.dev	2026-09-22T09:00:00Z	c097638f92de80ba8d6c696b26e6e601a5f61eb7		test: cover refunds
+
+93	5	src/module_2.py
+120	26	src/module_15.py
+1f1362ea41d1bc65be321c0a378a20159f9a26d0	Ines Duarte	ines@acme.dev	2026-09-22T15:00:00Z	35e995c107a71caeb833bb3b79f9f54781b33fa1		docs: onboarding guide
+
+7	35	src/module_5.py
+22	30	src/module_14.py
+44	18	src/module_10.py
+33	16	src/module_13.py
+450ddec8dd206c2e2ab1aeeaa90e85e51753b8b7	Maya Chen	maya@acme.dev	2026-09-23T13:00:00Z	1f1362ea41d1bc65be321c0a378a20159f9a26d0	tag: v1.3.0	fix(ui): dark mode contrast
+
+16	10	src/module_21.py
+21	4	src/module_7.py
+65	31	src/module_18.py
+29	28	src/module_30.py
+d54ad009d179ae346683cfc3603979bc99339ef7	Tom Okafor	tom@acme.dev	2026-09-23T10:00:00Z	450ddec8dd206c2e2ab1aeeaa90e85e51753b8b7		refactor: split invoice module
+
+71	12	src/module_8.py
+12	11	src/module_11.py
+d321d6f7ccf98b51540ec9d933f20898af3bd71e	Maya Chen	maya@acme.dev	2026-09-24T14:00:00Z	d54ad009d179ae346683cfc3603979bc99339ef7		perf: cache plan lookups
+
+104	36	src/module_7.py
+114	1	src/module_24.py
+112	26	src/module_13.py
+eb4ac3033e8ab3591e0fcefa8c26ce3fd36d5a0f	Tom Okafor	tom@acme.dev	2026-09-24T09:00:00Z	d321d6f7ccf98b51540ec9d933f20898af3bd71e		feat(api): bulk export
+
+35	21	src/module_25.py
+8	31	src/module_9.py
+74	23	src/module_5.py
+88	32	src/module_17.py
+b74f5ee9461495ba5ca4c72a7108a23904c27a05	Tom Okafor	tom@acme.dev	2026-09-24T14:00:00Z	eb4ac3033e8ab3591e0fcefa8c26ce3fd36d5a0f		fix: retry webhook on 502
+
+115	15	src/module_13.py
+52	28	src/module_14.py
+40	1	src/module_5.py
+b888b29826bb53dc531437e723738383d8339b56	Maya Chen	maya@acme.dev	2026-09-25T10:00:00Z	b74f5ee9461495ba5ca4c72a7108a23904c27a05		feat: team invites
+
+1	4	src/module_13.py
+120	33	src/module_28.py
+60	28	src/module_8.py
+101	6	src/module_8.py
+1d513c0bcbe33b2e7440e5e14d0b22ef95c9d673	Maya Chen	maya@acme.dev	2026-09-25T15:00:00Z	b888b29826bb53dc531437e723738383d8339b56		chore: bump deps
+
+106	29	src/module_3.py
+76546f9a641ede2beab506b96df1688d889e629a	Maya Chen	maya@acme.dev	2026-09-28T14:00:00Z	1d513c0bcbe33b2e7440e5e14d0b22ef95c9d673		feat: team invites
+
+83	19	src/module_5.py
+7d7116e23efef7292cad5e6f033d9a962708228c	Tom Okafor	tom@acme.dev	2026-09-28T09:00:00Z	76546f9a641ede2beab506b96df1688d889e629a		refactor: split invoice module
+
+13	4	src/module_10.py
+be461a0cd1fda052a69c3fd94f8cf5f6f86afa34	Ines Duarte	ines@acme.dev	2026-09-28T11:00:00Z	7d7116e23efef7292cad5e6f033d9a962708228c		docs: onboarding guide
+
+102	38	src/module_1.py
+2	34	src/module_10.py
+1352246e33277e9d3c9090a434fa72cfa6536ae2	Maya Chen	maya@acme.dev	2026-09-29T13:00:00Z	be461a0cd1fda052a69c3fd94f8cf5f6f86afa34		perf: cache plan lookups
+
+61	33	src/module_8.py
+71	15	src/module_1.py
+3c26dffc8a2e8804dfe2c8a1195cfaa5ef6d0014	Maya Chen	maya@acme.dev	2026-09-29T11:00:00Z	1352246e33277e9d3c9090a434fa72cfa6536ae2		docs: onboarding guide
+
+3	12	src/module_16.py
+e62d7f1eb43d87c202d2f164ba61297e71be80f4	Tom Okafor	tom@acme.dev	2026-09-29T16:00:00Z	3c26dffc8a2e8804dfe2c8a1195cfaa5ef6d0014		docs: onboarding guide
+
+86	27	src/module_30.py
+48	14	src/module_16.py
+b37f6ddcefad7e8657837d3177f9ef2462f98acf	Tom Okafor	tom@acme.dev	2026-09-29T17:00:00Z	e62d7f1eb43d87c202d2f164ba61297e71be80f4		perf: cache plan lookups
+
+47	25	src/module_7.py
+1	18	src/module_24.py
+109	32	src/module_3.py
+27	31	src/module_7.py
+16b06bd9b738835e2d134fe8d596e9ab0086a985	Ines Duarte	ines@acme.dev	2026-09-29T14:00:00Z	b37f6ddcefad7e8657837d3177f9ef2462f98acf		feat(api): bulk export
+
+29	16	src/module_25.py
+114	18	src/module_4.py
+80	31	src/module_20.py
+24	14	src/module_16.py
+2d0c8af807ef45ac17cafb2973d866ba8f38caa9	Maya Chen	maya@acme.dev	2026-09-30T17:00:00Z	16b06bd9b738835e2d134fe8d596e9ab0086a985		feat: team invites
+
+119	25	src/module_2.py
+28	1	src/module_20.py
+4cd66dfabbd964f8c6c4414b07cdb45dae692e19	Maya Chen	maya@acme.dev	2026-09-30T15:00:00Z	2d0c8af807ef45ac17cafb2973d866ba8f38caa9		refactor: split invoice module
+
+91	3	src/module_6.py
+8ee51caaa2c2f4ee2e5b4b7ef5a89db7df1068d7	Tom Okafor	tom@acme.dev	2026-09-30T10:00:00Z	4cd66dfabbd964f8c6c4414b07cdb45dae692e19		perf: cache plan lookups
+
+11	10	src/module_11.py
+08a35293e09f508494096c1c1b3819edb9df50db	Tom Okafor	tom@acme.dev	2026-09-30T14:00:00Z	8ee51caaa2c2f4ee2e5b4b7ef5a89db7df1068d7		chore: bump deps
+
+5	19	src/module_22.py
+93	24	src/module_27.py
+48	21	src/module_15.py
+22	6	src/module_1.py
+215bb47da8fac3342b858ac3db09b033c6c46e0b	Maya Chen	maya@acme.dev	2026-10-01T16:00:00Z	08a35293e09f508494096c1c1b3819edb9df50db		perf: cache plan lookups
+
+114	7	src/module_18.py
+98	13	src/module_13.py
+46	19	src/module_27.py
+103	27	src/module_3.py
+8e63fd3e77796b102589b1ba1e4441c7982e4132	Ines Duarte	ines@acme.dev	2026-10-01T14:00:00Z	215bb47da8fac3342b858ac3db09b033c6c46e0b		perf: cache plan lookups
+
+25	20	src/module_12.py
+95	30	src/module_1.py
+81	26	src/module_8.py
+104	40	src/module_25.py
+6fb84aed32facd1299ee1e77c8fd2b1a6352669e	Ines Duarte	ines@acme.dev	2026-10-01T11:00:00Z	8e63fd3e77796b102589b1ba1e4441c7982e4132		feat: usage-based billing page
+
+5	29	src/module_3.py
+103	3	src/module_9.py
+25	4	src/module_29.py
+78	21	src/module_12.py
+812ed4562d3211363a7b813aa9cd2cf042b63bb2	Maya Chen	maya@acme.dev	2026-10-02T12:00:00Z	6fb84aed32facd1299ee1e77c8fd2b1a6352669e		feat: team invites
+
+34	20	src/module_30.py
+31bd9b9f5f7b338e41b56183a2f3008b541d7c84	Tom Okafor	tom@acme.dev	2026-10-02T13:00:00Z	812ed4562d3211363a7b813aa9cd2cf042b63bb2		feat: usage-based billing page
+
+4	14	src/module_4.py
+9a79be611e0267e1d943da0737c6c51be67865a0	Ines Duarte	ines@acme.dev	2026-10-02T10:00:00Z	31bd9b9f5f7b338e41b56183a2f3008b541d7c84		refactor: split invoice module
+
+117	27	src/module_27.py
+64	8	src/module_30.py
+64	11	src/module_1.py
+310b86e0b62b828562fc91c7be5380a992b2786a	Ines Duarte	ines@acme.dev	2026-10-02T13:00:00Z	9a79be611e0267e1d943da0737c6c51be67865a0	tag: v1.4.0	chore: bump deps
+
+42	20	src/module_15.py
+47	38	src/module_3.py
+dbc0f004854457f59fb16ab863a3a1722cef553f	Maya Chen	maya@acme.dev	2026-10-05T11:00:00Z	310b86e0b62b828562fc91c7be5380a992b2786a		chore: bump deps
+
+53	4	src/module_21.py
+5	30	src/module_18.py
+c8306ae139ac98f432932286151dc0ec55580eca	Tom Okafor	tom@acme.dev	2026-10-05T15:00:00Z	dbc0f004854457f59fb16ab863a3a1722cef553f		refactor: split invoice module
+
+10	16	src/module_20.py
+934385f53d1bd0c1b8493e44d0dfd4c8e88a04bb	Maya Chen	maya@acme.dev	2026-10-06T16:00:00Z	c8306ae139ac98f432932286151dc0ec55580eca		refactor: split invoice module
+
+91	28	src/module_6.py
+30	8	src/module_14.py
+59	39	src/module_29.py
+87	15	src/module_24.py
+78a8efcbaaa1a9a30f9f327aa89d0b6acaaffb03	Ines Duarte	ines@acme.dev	2026-10-06T13:00:00Z	934385f53d1bd0c1b8493e44d0dfd4c8e88a04bb		docs: onboarding guide
+
+48	16	src/module_24.py
+34	12	src/module_15.py
+32	11	src/module_8.py
+e114c448f4ab8554ad14eff3d66dfeb3965ce8fc	Maya Chen	maya@acme.dev	2026-10-07T15:00:00Z	78a8efcbaaa1a9a30f9f327aa89d0b6acaaffb03		docs: onboarding guide
+
+42	4	src/module_13.py
+33	15	src/module_17.py
+7224f997fc148baa0b7f81c1eda6fcc3fd003db0	Tom Okafor	tom@acme.dev	2026-10-07T16:00:00Z	e114c448f4ab8554ad14eff3d66dfeb3965ce8fc		fix(ui): dark mode contrast
+
+14	0	src/module_16.py
+524e05dc77239f3a15dab766aaa59a9e432efde7	Ines Duarte	ines@acme.dev	2026-10-07T10:00:00Z	7224f997fc148baa0b7f81c1eda6fcc3fd003db0		perf: cache plan lookups
+
+113	18	src/module_8.py
+17503a6b2326f09fbc4e3a7c03874c7333002038	Ines Duarte	ines@acme.dev	2026-10-08T14:00:00Z	524e05dc77239f3a15dab766aaa59a9e432efde7		fix: retry webhook on 502
+
+66	11	src/module_15.py
+78	16	src/module_25.py
+100	0	src/module_4.py
+a1422e6a168630cdd214ac5e31ca01ae1bee8d92	Maya Chen	maya@acme.dev	2026-10-09T14:00:00Z	17503a6b2326f09fbc4e3a7c03874c7333002038		feat: usage-based billing page
+
+44	9	src/module_2.py
+27	16	src/module_2.py
+77	13	src/module_27.py
+5e796e48332af4142b10ca0f86e65d9bfdb05884	Ines Duarte	ines@acme.dev	2026-10-09T11:00:00Z	a1422e6a168630cdd214ac5e31ca01ae1bee8d92		perf: cache plan lookups
+
+80	19	src/module_3.py
+27	2	src/module_26.py
+6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2	Maya Chen	maya@acme.dev	2026-10-12T09:00:00Z	5e796e48332af4142b10ca0f86e65d9bfdb05884		fix(ui): dark mode contrast
+
+53	6	src/module_26.py
+601ca99d55f00a2e8e736676b606a4d31d374fdd	Maya Chen	maya@acme.dev	2026-10-12T11:00:00Z	6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2		test: cover refunds
+
+82	34	src/module_3.py
+84	10	src/module_13.py
+e993215bfdaa515f6ea00fafc1918f549119f993	Tom Okafor	tom@acme.dev	2026-10-12T11:00:00Z	601ca99d55f00a2e8e736676b606a4d31d374fdd		docs: onboarding guide
+
+54	3	src/module_10.py
+96	36	src/module_29.py
+46	26	src/module_14.py
+ecb7937db58ec9dea0c47db88463d85e81143032	Maya Chen	maya@acme.dev	2026-10-13T14:00:00Z	e993215bfdaa515f6ea00fafc1918f549119f993		refactor: split invoice module
+
+27	0	src/module_14.py
+116	10	src/module_14.py
+15	5	src/module_13.py
+74	23	src/module_15.py
+efa6e44dfa0145249be273ecd84a97f534b04920	Tom Okafor	tom@acme.dev	2026-10-13T15:00:00Z	ecb7937db58ec9dea0c47db88463d85e81143032		feat: usage-based billing page
+
+71	9	src/module_21.py
+683e725c03a87baaad2623231644e944e537acab	Ines Duarte	ines@acme.dev	2026-10-13T16:00:00Z	efa6e44dfa0145249be273ecd84a97f534b04920		feat: team invites
+
+95	32	src/module_6.py
+19	22	src/module_10.py
+21	33	src/module_6.py
+d0e2dbb0bac1917d360aaf52c01a2a4b669e8cdb	Ines Duarte	ines@acme.dev	2026-10-13T16:00:00Z	683e725c03a87baaad2623231644e944e537acab		fix: retry webhook on 502
+
+63	12	src/module_10.py
+17	2	src/module_30.py
+62	20	src/module_2.py
+78	40	src/module_13.py
+12f0de3dc76e067d21ed85125716e02e9f1e69f0	Tom Okafor	tom@acme.dev	2026-10-14T14:00:00Z	d0e2dbb0bac1917d360aaf52c01a2a4b669e8cdb		feat: team invites
+
+79	12	src/module_27.py
+61	11	src/module_19.py
+28	2	src/module_13.py
+67	10	src/module_13.py
+a2e33d344f272e100d4a8efeabc7ae8a60a8ba7a	Ines Duarte	ines@acme.dev	2026-10-14T16:00:00Z	12f0de3dc76e067d21ed85125716e02e9f1e69f0		chore: bump deps
+
+93	12	src/module_2.py
+114	35	src/module_27.py
+775bc5c30e27f0e562115d136e7f7edbd3cead89	Tom Okafor	tom@acme.dev	2026-10-15T16:00:00Z	a2e33d344f272e100d4a8efeabc7ae8a60a8ba7a		refactor: split invoice module
+
+71	40	src/module_25.py
+40	26	src/module_10.py
+75	15	src/module_14.py
+50	23	src/module_15.py
+8bd7954c40c1e59a900f71ea3a266732609915b1	Ines Duarte	ines@acme.dev	2026-10-15T15:00:00Z	775bc5c30e27f0e562115d136e7f7edbd3cead89		feat: usage-based billing page
+
+80	31	src/module_15.py
+05a8ea5382b9fd885261bb3eed0527d1d3b07262	Ines Duarte	ines@acme.dev	2026-10-15T14:00:00Z	8bd7954c40c1e59a900f71ea3a266732609915b1		fix(ui): dark mode contrast
+
+108	11	src/module_26.py
+61	25	src/module_4.py
+9	8	src/module_12.py
+56	23	src/module_3.py
+40bd001563085fc35165329ea1ff5c5ecbdbbeef	Maya Chen	maya@acme.dev	2026-10-16T09:00:00Z	05a8ea5382b9fd885261bb3eed0527d1d3b07262		test: cover refunds
+
+6	40	src/module_5.py
+f38cfe2e2facbcc742bad63f91ad55637300cb45	Maya Chen	maya@acme.dev	2026-10-16T16:00:00Z	40bd001563085fc35165329ea1ff5c5ecbdbbeef		perf: cache plan lookups
+
+7	32	src/module_29.py
+0ca9277f91e40054767f69afeb0426711ca0fddd	Tom Okafor	tom@acme.dev	2026-10-16T15:00:00Z	f38cfe2e2facbcc742bad63f91ad55637300cb45	tag: v1.5.0	feat: usage-based billing page
+
+79	7	src/module_7.py
+114d4eefde1dae3983e7a79f04c72feb9a3a7efd	Tom Okafor	tom@acme.dev	2026-10-16T15:00:00Z	0ca9277f91e40054767f69afeb0426711ca0fddd		fix(ui): dark mode contrast
+
+104	10	src/module_22.py
+101	14	src/module_3.py
+107	22	src/module_20.py
+008451a05e1e7aa32c75119df950d405265e0904	Ines Duarte	ines@acme.dev	2026-10-16T15:00:00Z	114d4eefde1dae3983e7a79f04c72feb9a3a7efd		perf: cache plan lookups
+
+116	29	src/module_5.py
+33	32	src/module_30.py
+62	13	src/module_19.py
+b4182bff4b3cf75f9e54f4990f9bd153c0c2973c	Maya Chen	maya@acme.dev	2026-10-19T09:00:00Z	008451a05e1e7aa32c75119df950d405265e0904		feat(api): bulk export
+
+48	2	src/module_7.py
+24	25	src/module_6.py
+82	17	src/module_22.py
+8b7471f4ae0bf59f5f0a425068c05d96f4801b9e	Tom Okafor	tom@acme.dev	2026-10-19T11:00:00Z	b4182bff4b3cf75f9e54f4990f9bd153c0c2973c		chore: bump deps
+
+15	33	src/module_2.py
+82	23	src/module_28.py
+58	35	src/module_17.py
+2a7541babb57434e5631ffa2b5639e24f8ce84fc	Maya Chen	maya@acme.dev	2026-10-20T09:00:00Z	8b7471f4ae0bf59f5f0a425068c05d96f4801b9e		refactor: split invoice module
+
+34	24	src/module_12.py
+74	9	src/module_12.py
+43	5	src/module_15.py
+e794a80eb109162d579df51db6d52e223bb0e9be	Tom Okafor	tom@acme.dev	2026-10-20T15:00:00Z	2a7541babb57434e5631ffa2b5639e24f8ce84fc		feat: team invites
+
+38	33	src/module_9.py
+91dfde1d6e005e422f64a59776234f1f4c80b5e4	Ines Duarte	ines@acme.dev	2026-10-20T12:00:00Z	e794a80eb109162d579df51db6d52e223bb0e9be		feat: usage-based billing page
+
+29	9	src/module_10.py
+d30f79cf7fef47bd7a5611719f936539bec0d2e9	Maya Chen	maya@acme.dev	2026-10-21T11:00:00Z	91dfde1d6e005e422f64a59776234f1f4c80b5e4		test: cover refunds
+
+115	3	src/module_5.py
+63	14	src/module_20.py
+84	2	src/module_1.py
+95e815d1541bf6f358cfffbe66ab3af0d0c09d09	Maya Chen	maya@acme.dev	2026-10-21T17:00:00Z	d30f79cf7fef47bd7a5611719f936539bec0d2e9		feat: usage-based billing page
+
+39	6	src/module_17.py
+46	34	src/module_8.py
+53	37	src/module_10.py
+40f7c01f4189510031adccd9c604a128adaf9b00	Tom Okafor	tom@acme.dev	2026-10-21T14:00:00Z	95e815d1541bf6f358cfffbe66ab3af0d0c09d09		perf: cache plan lookups
+
+21	8	src/module_1.py
+120	15	src/module_23.py
+20	28	src/module_4.py
+9	40	src/module_5.py
+9e071a3a594a8964cbefe784f8a6afaa94c0de17	Ines Duarte	ines@acme.dev	2026-10-21T11:00:00Z	40f7c01f4189510031adccd9c604a128adaf9b00		docs: onboarding guide
+
+8	35	src/module_29.py
+e1a864f0b77f6c89794827a9035355dc8d052622	Maya Chen	maya@acme.dev	2026-10-22T10:00:00Z	9e071a3a594a8964cbefe784f8a6afaa94c0de17		feat: team invites
+
+32	10	src/module_29.py
+1	2	src/module_2.py
+69	1	src/module_13.py
+24	15	src/module_6.py
+56ad4d4deaec98465c419b4a8ea7bfc1ed38c4d9	Tom Okafor	tom@acme.dev	2026-10-23T15:00:00Z	e1a864f0b77f6c89794827a9035355dc8d052622		refactor: split invoice module
+
+67	38	src/module_21.py
+65	26	src/module_27.py
+fa755791d0509bb06ae715a2072de724815ed84d	Ines Duarte	ines@acme.dev	2026-10-23T09:00:00Z	56ad4d4deaec98465c419b4a8ea7bfc1ed38c4d9		docs: onboarding guide
+
+39	40	src/module_2.py

@@ -6,7 +6,7 @@ import unittest
 from datetime import date
 
 from shipstreak import Kudos, leaderboard, parse_log, read_repo, records, streaks, summary, weekly
-from shipstreak.core import SEP
+from shipstreak.core import SEP, export_log
 
 LOG = (
     f"{SEP}a1\tSam\tsam@x.io\t2026-10-05T10:00:00+00:00\tp0\ttag: v1.0\tchore: release\n\n3\t1\tREADME.md\n"
@@ -78,6 +78,24 @@ class Tests(unittest.TestCase):
             self.assertEqual(len(commits), 1)
             self.assertTrue(commits[0].is_ship)
             self.assertEqual(commits[0].added, 1)
+            # the export file is the web app's upload format: same commits, same repo name
+            exported = os.path.join(d, "history.log")
+            with open(exported, "w", encoding="utf-8") as fh:
+                fh.write(export_log(d))
+            again = read_repo(exported)
+            self.assertEqual([(c.sha, c.repo, c.added) for c in again], [(c.sha, c.repo, c.added) for c in commits])
+
+    def test_bundled_example_and_rejecting_non_exports(self):
+        example = os.path.join(os.path.dirname(__file__), "..", "examples", "acme-app.log")
+        commits = read_repo(example)
+        self.assertEqual({c.repo for c in commits}, {"acme-app"})
+        self.assertGreater(sum(c.is_ship for c in commits), 50)
+        with tempfile.TemporaryDirectory() as d:
+            junk = os.path.join(d, "notes.txt")
+            with open(junk, "w", encoding="utf-8") as fh:
+                fh.write("just some notes\n")
+            with self.assertRaises(ValueError):
+                read_repo(junk)
 
     def test_empty_feat_commits_are_not_ships(self):
         log = "".join(

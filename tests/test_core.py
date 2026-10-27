@@ -114,6 +114,27 @@ class Tests(unittest.TestCase):
         dup = parse_log(LOG + LOG)
         self.assertEqual(len(dup), 5)
 
+    def test_board_weeks_must_be_positive_and_self_kudos_leaves_no_empty_entry(self):
+        import contextlib
+        import io
+        import json
+
+        from shipstreak.__main__ import main
+
+        with tempfile.TemporaryDirectory() as d:
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(io.StringIO()):
+                code = main(
+                    ["board", os.path.join(os.path.dirname(__file__), "..", "examples", "acme-app.log"), "--weeks", "0"]
+                )
+            self.assertEqual(code, 2)
+        with tempfile.TemporaryDirectory() as d:
+            k = Kudos(os.path.join(d, "k.json"))
+            k.give("Sam", "sam", "2026-W41")
+            self.assertEqual(k.count("sam", "2026-W41"), 0)
+            with open(os.path.join(d, "k.json")) as fh:
+                self.assertEqual(json.load(fh), {})
+
     def test_self_kudos_ignores_case_and_write_is_atomic(self):
         with tempfile.TemporaryDirectory() as d:
             k = Kudos(os.path.join(d, "k.json"))

@@ -221,9 +221,10 @@ class Kudos:
 
     def give(self, frm: str, to: str, week: str):
         frm, to = self._who(frm), self._who(to)
-        given = self.data.setdefault(f"{to}|{week}", [])
-        if frm != to and frm not in given:  # no self-kudos, however it is capitalised
-            given.append(frm)
+        if frm != to:  # no self-kudos, however it is capitalised, and no empty entry left behind
+            given = self.data.setdefault(f"{to}|{week}", [])
+            if frm not in given:
+                given.append(frm)
         tmp = f"{self.path}.tmp"
         with open(tmp, "w", encoding="utf-8") as fh:
             json.dump(self.data, fh, indent=2)

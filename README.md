@@ -48,7 +48,7 @@ To sell self-serve, set four variables and point a Stripe webhook at `https://<y
 |---|---|
 | `STRIPE_SECRET_KEY` | `sk_live_...` |
 | `STRIPE_WEBHOOK_SECRET` | `whsec_...` |
-| `STRIPE_PRICES` | `team=price_123,business=price_456` |
+| `STRIPE_PRICES` | `builder=price_123,team=price_456,community=price_789` |
 | `PUBLIC_URL` | `https://shipstreak.example.com` |
 
 Buyers pick a plan on `/pricing`, pay on Stripe Checkout and see their API key once on the success page. Cancelling the subscription revokes the key. A selling server always requires a key.
@@ -59,11 +59,13 @@ Every plan starts with a 14-day free trial. Prices in USD, billed monthly unless
 
 | Plan | Price | Includes |
 |---|---|---|
-| **Builder** | $5 per month | Unlimited repos; Streaks and records; Weekly summary |
-| **Team** | $8 per member per month | Leaderboards; Kudos; Team summary |
-| **Community** | $199 per month | Hackathons and cohorts; Public leaderboards; Branding |
+| **Builder** | $5 per month | Repos; Streaks and records; Weekly summary |
+| **Team** | $8 per member per month | Everything in Builder; Leaderboards; Kudos; Team summary |
+| **Community** | $199 per month | Everything in Team; Cohort support |
 
 To start a trial or buy a plan, [request access](https://github.com/eliem08/shipstreak/issues/new?title=ShipStreak%20trial&labels=sales).
+
+Plan note, owner decision on merge: there is no feature gating by plan in the code — every API key unlocks the same software (week, streak, board, kudos). Hackathons, cohorts as a software feature, public leaderboards, and branding are not built and have been removed from the sales copy; Community's cohort support is a human service, not a gated feature. Team's per-member price is also not enforced by checkout, which sells one key per subscription and does not count members — either member counting must be built or Team must be repriced as a flat subscription.
 
 ## Licence
 
@@ -107,6 +109,7 @@ python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\act
 pip install -e ".[dev]"
 python -m unittest discover -s tests -t .           # unit + CLI smoke tests
 ruff check . && ruff format --check .               # lint + format
+python -m pip wheel . --no-deps -w dist            # customer wheel, as in Quickstart
 ```
 
 ```

@@ -35,3 +35,22 @@ integrations for remote repos and deploy providers (Vercel, Fly). A card rendere
 ## 5. Risks
 Gaming via trivial `feat:` commits. Weight ships by diff size bands and deploy evidence, and
 clubs can choose their scoring rules.
+
+## 6. Limitations (sell-ready audit, 2026-10-28)
+- No feature gating by plan: every API key unlocks the same software. Team and
+  Community pricing is support and onboarding, not gated features; hackathons,
+  cohorts as software, public leaderboards, and branding are roadmap, not shipped,
+  and were removed from sales copy.
+- Team's per-member price is not enforced: Stripe checkout sells one key per
+  subscription and does not count members.
+- The hosted API cannot read local git repos: it works from `shipstreak export`
+  files uploaded by the customer (the CLI's `export` command is deliberately not
+  exposed by the API). A buyer who expects the web app to connect directly to
+  their repos will need the OAuth integration from the roadmap.
+- Docker build and a live Render/Fly deployment were not verified in the audit
+  environment (no Docker binary there); Dockerfile, render.yaml, and fly.toml are
+  the same template shape as vibe-lube, but a deployment claim remains
+  "not verified" until one is made.
+- Stripe prices were not verified against a live Stripe account in this run;
+  checkout and revocation are covered in tests with mocked Stripe calls, and the
+  README example now uses builder/team/community plan keys to match the plan names.

@@ -53,6 +53,8 @@ def _run(argv=None):
         return 0
     commits = _load(a.repos)
     if a.cmd == "board":
+        if a.weeks < 1:
+            raise ValueError("--weeks must be at least 1")
         for i, r in enumerate(leaderboard(commits, date.today() - timedelta(weeks=a.weeks)), 1):
             print(
                 f"{i:>2}. {r['author']:<24} {r['ships']:>4} ships  {r['active_days']:>3} days  {r['commits']:>5} commits"

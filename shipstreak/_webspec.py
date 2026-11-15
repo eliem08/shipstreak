@@ -125,7 +125,7 @@ SPEC = {
                     "kind": "text",
                     "required": False,
                     "choices": None,
-                    "default": "2026-W44",
+                    "default": "2026-W46",
                     "help": None,
                     "scope": "op",
                     "append": False,

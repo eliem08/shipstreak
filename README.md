@@ -55,15 +55,18 @@ Buyers pick a plan on `/pricing`, pay on Stripe Checkout and see their API key o
 
 ## Pricing
 
-Every plan starts with a 14-day free trial. Prices in USD, billed monthly unless noted.
+Monthly plans start with a 14-day free trial. Prices in USD, billed monthly unless noted.
 
 | Plan | Price | Includes |
 |---|---|---|
 | **Builder** | $5 per month | Unlimited repos; Streaks and records; Weekly summary |
 | **Team** | $8 per member per month | Leaderboards; Kudos; Team summary |
-| **Community** | $199 per month | Hackathons and cohorts; Public leaderboards; Branding |
+| **Community** | $199 per month | Hackathons and cohorts; Leaderboards across repos |
 
 To start a trial or buy a plan, [request access](https://github.com/eliem08/shipstreak/issues/new?title=ShipStreak%20trial&labels=sales).
+
+Plan note: every plan runs the same software, and every API key unlocks all of it. Seat, agent and volume
+limits are licence terms; the code does not enforce them. Support, SLA and done-for-you items are services.
 
 ## Licence
 

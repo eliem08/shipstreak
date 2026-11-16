@@ -125,7 +125,7 @@ SPEC = {
                     "kind": "text",
                     "required": False,
                     "choices": None,
-                    "default": "2026-W46",
+                    "default": "2026-W47",
                     "help": None,
                     "scope": "op",
                     "append": False,
@@ -144,6 +144,26 @@ SPEC = {
                 },
             ],
             "id": "kudos",
+        },
+    ],
+    "plans": [
+        {
+            "key": "builder",
+            "name": "Builder",
+            "price": "$5 per month",
+            "features": ["Unlimited repos", "Streaks and records", "Weekly summary"],
+        },
+        {
+            "key": "team",
+            "name": "Team",
+            "price": "$8 per member per month",
+            "features": ["Leaderboards", "Kudos", "Team summary"],
+        },
+        {
+            "key": "community",
+            "name": "Community",
+            "price": "$199 per month",
+            "features": ["Hackathons and cohorts", "Leaderboards across repos"],
         },
     ],
 }
